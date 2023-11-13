@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
-CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "Main:app", "--bind", "--reload"]
+CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "Main:app", "--reload"]
