@@ -25,7 +25,7 @@ def Clear(data):
 def Predicciones(df):
     m = Prophet()
     m.fit(df)
-    future=m.make_future_dataframe(periods=2, freq='D')
+    future=m.make_future_dataframe(periods=3, freq='D')
     future.tail()  
     forecast=m.predict(future)
     forecast[['ds','yhat','yhat_lower', 'yhat_upper' ]]
