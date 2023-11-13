@@ -14,7 +14,7 @@ def read_root():
     data = GetDatos()
     df = Clear(data)
     return Predicciones(df)
-
+#prueba
 if __name__ == "__Main__":
     import uvicorn
     uvicorn.run("server.api:app", reload=True)
