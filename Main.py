@@ -14,3 +14,7 @@ def read_root():
     data = GetDatos()
     df = Clear(data)
     return Predicciones(df)
+
+if __name__ == "__Main__":
+    import uvicorn
+    uvicorn.run("server.api:app", host="0.0.0.0", port=8000, reload=True)
