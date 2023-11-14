@@ -2,7 +2,7 @@ import pandas as pd
 import requests
 
 def GetAcciones(accion):
-    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={accion}&apikey=XF0U5OXCAIFK969G"
+    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={accion}&apikey=WHBCOCJ4YJMCFL58"
     reponse = requests.get(url)
     if reponse.status_code == 200:
         data = reponse.json()
