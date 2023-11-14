@@ -1,7 +1,9 @@
 from fastapi import FastAPI
-from src.controller.Dolar import Predicciones, Clear, GetDatos
+
 from src.controller.Dolar import Predicciones, Clear, GetDatos
 from src.controller.predicciones_diarias import get_data_prediccion
+from src.controller.Acciones import GetAcciones
+from src.controller.predicciones_acciones import Data, Predicciones_Acciones
 from fastapi.middleware.cors import CORSMiddleware
 import threading
 app = FastAPI()
@@ -24,6 +26,15 @@ def read_root():
     df = Clear(data)
     return Predicciones(df)
 #prueba
+@app.get("/acciones/{accion}")
+def Historico_accines(accion):
+    return GetAcciones(accion)
+
+@app.get("/acciones/predicciones/{accion}")
+def Prediccion_Accion(accion):
+    df = Data(accion)
+    return Predicciones_Acciones(df)
+        
 if __name__ == "__Main__":
     import uvicorn
     uvicorn.run("server.api:app", reload=True)

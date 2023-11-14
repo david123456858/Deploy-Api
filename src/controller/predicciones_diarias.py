@@ -1,6 +1,7 @@
 
 import time
 from src.controller.Dolar import GetDatos,Clear,Predicciones
+
 def get_data_prediccion():
     while True:
         data = GetDatos()
