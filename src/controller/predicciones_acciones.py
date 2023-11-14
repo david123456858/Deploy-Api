@@ -4,8 +4,8 @@ import requests
 import datetime 
 from src.controller.Acciones import GetAcciones
 
-def Data(accion):
-    data = GetAcciones(accion)
+async def Data(accion):
+    data = await GetAcciones(accion)
     if data is not None:
       df = pd.DataFrame.from_dict(data, orient= 'index')
       print(df)

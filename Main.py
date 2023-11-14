@@ -27,12 +27,12 @@ def read_root():
     return Predicciones(df)
 #prueba
 @app.get("/acciones/{accion}")
-def Historico_accines(accion):
-    return GetAcciones(accion)
+async def Historico_accines(accion):
+    return await GetAcciones(accion)
 
 @app.get("/acciones/predicciones/{accion}")
-def Prediccion_Accion(accion):
-    df = Data(accion)
+async def Prediccion_Accion(accion):
+    df = await Data(accion)
     return Predicciones_Acciones(df)
         
 if __name__ == "__Main__":
