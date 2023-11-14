@@ -4,7 +4,7 @@ import asyncio
 import httpx
 
 async def GetAcciones(accion):
-    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={accion}&apikey=demo"
+    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={accion}&apikey=WHBCOCJ4YJMCFL58"
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
         if response.status_code == 200:
