@@ -6,7 +6,11 @@ from src.controller.Acciones import GetAcciones
 
 def Data(accion):
     data = GetAcciones(accion)
-    df = pd.DataFrame.from_dict(data, orient= 'index')
+    if data is not None:
+      df = pd.DataFrame.from_dict(data, orient= 'index')
+      print(df)
+    else:
+     print("Data is None")
     df_prediccion = df[['4. close']]
 
     # Renombrar la columna para que sea más amigable
